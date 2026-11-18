@@ -33,14 +33,48 @@ class RequestMethods():
 # Class utilized for managing SMTP
 class EmailMethods():
 	
+	
+# Class utilized for system check functions
+class SystemCheck():
+	
+	def pingreq(A_Record, IPv4):
+		try:
+			subpr
 
 def main():
 	# File must be named JobFile.json!!
-	JsonJobFile = ""
+	JsonJobFile = ./JobFile.json
 	# File must be named URLFile.json!!
-	JsonURLFile = ""
+	JsonURLFile = ./URLFile.json
 	
+	BANNER = """
+			JobPuller2k
+		Created by Stuxnet
+	"""
+	try:
+		SystemCheck()
+	except:
+		print("The system check pointed to issues with the application")
+		print("Exiting...")
+		time.sleep(3)
+		exit()
 	
+def SystemCheck():
+	DNSName = "one.one.one.one"
+	ARecord = "1.1.1.1"
+	
+	print("Checking Internet Connectivitiy")
+	
+	# Simple ICMP ping to both a domain, and a A Record
+	try:
+		SystemCheck.pingreq(DNSName, ARecord)
+	except:
+		print("There was an issue with connecting to the internet,\nplease check your connection and try again")
+		time.sleep(3)
+		exit()
+		
+		
+		
 	
 if __name__ == "__main__":
 	main()
